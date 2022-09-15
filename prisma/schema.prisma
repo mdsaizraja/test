@@ -9,3 +9,30 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Project {
+  id    Int      @id @default(autoincrement())
+  name  String
+  state State
+  date  DateTime @default(now())
+}
+
+enum State {
+  Propose
+  Open
+  Closed
+}
+
+model Access {
+  id         Int    @id @default(autoincrement())
+  project_id Int @unique
+  user_id    Int @unique
+  permit     Permit 
+}
+
+enum Permit {
+  Read
+  Create
+  Update
+  Delete
+}
