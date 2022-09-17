@@ -49,30 +49,6 @@ export default function Home({ initialUsers }) {
               onChange={(e) => setid(e.target.value)}
             />
             <br />
-
-            <Form.Input
-              fluid
-              label="name"
-              placeholder="name"
-              value={name}
-              onChange={(e) => setname(e.target.value)}
-            />
-            <Form.Input
-              fluid
-              label="date"
-              placeholder="date"
-              type="date"
-              value={date}
-              onChange={(e) => setdate(e.target.value)}
-            />
-            <Form.Select
-              fluid
-              label="state"
-              placeholder="state"
-              options={options}
-              value={state}
-              onChange={handleChange}
-            />
           </Form.Group>
           <Form.Button>Submit</Form.Button>
         </Form>
